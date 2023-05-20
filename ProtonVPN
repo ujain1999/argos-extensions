@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
 
+# protonvpn-cli needs to be installed beforehand.
+# Refer installation instructions - https://protonvpn.com/support/linux-vpn-tool/
+# For extension to update everytime status is changed, either rename this file to 'ProtonVPN.1s.py'
+# or make the following changes to the utilities.js file in the extension folder
+# Typically located at ~/.local/share/gnome-shell/extensions/argos@pew.worldwidemann.com/utilities.js - line 32
+# Change updateInterval from null to any integer value, for example, 1 for the extension to update every second.
+
 import sys, os, subprocess
 
 STATUS_CMD = ["protonvpn-cli","status"]
