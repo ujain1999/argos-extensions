@@ -2,8 +2,8 @@
 
 echo "| iconName=go-top-symbolic.symbolic"
 echo "---"
-echo "Update all packages | iconName=application-vnd.debian.binary-package bash='sudo nala update && sudo nala upgrade && exit 0' terminal=true"
+echo "Update all packages | iconName=application-vnd.debian.binary-package bash=\"pkexec sh -c 'apt -y update && apt -y upgrade' && exit 0\" terminal=true"
 echo "Update all flatpaks | iconName=package-x-generic-symbolic bash='flatpak update && exit 0' terminal=true"
 echo "---"
-echo "Update all | iconName=utilities-terminal-symbolic bash='sudo nala update && sudo nala upgrade && flatpak update && exit 0' terminal=true"
+echo "Update all | iconName=utilities-terminal-symbolic bash=\"pkexec sh -c 'apt -y update && apt -y upgrade' && flatpak update && exit 0\" terminal=true"
 
