@@ -10,7 +10,7 @@
 import sys, os, subprocess
 
 STATUS_CMD = ["protonvpn-cli","status"]
-CONNECT_CMD = "protonvpn-cli c"
+CONNECT_CMD = "protonvpn-cli c -f"
 DISCONNECT_CMD = "protonvpn-cli d"
 DISCONNECT_STATUS_OUTPUT = "No active Proton VPN connection."
 
@@ -19,7 +19,7 @@ final_txt = f"| iconName=network-transmit-symbolic.symbolic\n---\n"
 VPN_STATUS = subprocess.check_output(STATUS_CMD).decode('utf-8').strip()
 if VPN_STATUS == DISCONNECT_STATUS_OUTPUT:
     final_txt += f"VPN Status: <span color='#cb515a'>Disconnected</span> | iconName=network-vpn-disconnected-symbolic\n"
-    final_txt += f"Connect to VPN | iconName=pan-end-symbolic.symbolic bash='{CONNECT_CMD} && exit 0' refresh=true\n"
+    final_txt += f"Connect to VPN | iconName=pan-end-symbolic.symbolic bash='{CONNECT_CMD} && exit 0' terminal=false refresh=true\n"
 else:
     final_txt += f"VPN Status: <span color='#69de7b'>Connected</span> | iconName=network-vpn-symbolic\n"
     final_txt += f"Disconnect VPN | iconName=pan-end-symbolic.symbolic bash='{DISCONNECT_CMD} && exit 0' terminal=false refresh=true\n"
